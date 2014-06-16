@@ -1,0 +1,36 @@
+.header {
+    @include table-flex(center, center, flex, column, wrap, center);
+    background: url('/images/piweek.jpg') no-repeat center center;
+    background-size: cover;
+    .wrapper {
+        @include table-flex-child(0, auto, 0, 960px);
+        text-align: center;
+    }
+    .icon-logo {
+        color: $purple;
+        font-size: 110px;
+        margin-right: 1rem;
+        vertical-align: middle;
+    }
+    .site-title {
+        color: $white;
+        font: normal 100px/150px 'piweek';
+        letter-spacing: -10px;
+    }
+    .site-description {
+        @extend %xlarge;
+        color: $white;
+        line-height: 3rem;
+        span {
+            display: block;
+        }
+        a {
+            @include transition(color .3s linear);
+            color: $orange;
+            &:hover {
+                @include transition(color .3s linear);
+                color: $dark-orange;
+            }
+        }
+    }
+}

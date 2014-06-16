@@ -1,0 +1,9 @@
+section.about
+    h1.about-title So, What is this ΠWEEK thing?
+    include ../pieces/about
+    div.pictures
+   - for (var x = 0; x < 5; x++)
+        figure
+            a(href="", title="Picture Title")
+                img.avatar(src="http://thecodeplayer.com/u/uifaces/12.jpg", alt="username")
+                figcaption Picture by aguadeborrajas

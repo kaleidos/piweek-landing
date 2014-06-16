@@ -1,0 +1,132 @@
+// Typography
+
+@each $font-face in piweek, OpenSans-Bold, OpenSans-Light, OpenSans-Regular, OpenSans-Semibold {
+    @font-face {
+        font-family: '#{$font-face}';
+        src: url('../fonts/#{$font-face}.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/#{$font-face}.woff') format('woff'),
+            url('../fonts/#{$font-face}.ttf')  format('truetype'),
+            url('../fonts/#{$font-face}.svg#{$font-face}') format('svg');
+    }
+}
+
+body {
+    font: normal 16px/21px 'OpenSans-Regular', Arial, sans-serif;
+}
+
+//- __Font Sizes__
+%xsmall {font-size: .5rem;}
+%small {font-size: .8rem;}
+%medium {font-size: 1rem;}
+%large {font-size: 1.2rem;}
+%xlarge {font-size: 2rem;}
+%xxlarge {font-size: 3rem;}
+
+//- Headings
+h3,
+h4,
+h5,
+h6 {
+    color: $blackish;
+    font-weight: normal;
+    a {
+        font-weight: inherit;
+    }
+}
+
+h1 {
+    @extend %xxlarge;
+    color: $blackish;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    a {
+        font-weight: inherit;
+    }
+}
+
+h2 {
+    @extend %xlarge;
+    color: $blackish;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    a {
+        font-weight: inherit;
+    }
+}
+
+//- Main Text
+p {
+    margin: 0 0 20px;
+    img {
+        margin: 0;
+    }
+  }
+
+em {
+    font-style: italic;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+}
+
+hr {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    height: 0;
+    margin: 10px 0 30px;
+}
+
+// __Links__
+
+a,
+a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+// _ Piweek Icons
+
+[data-icon]:before {
+    content: attr(data-icon);
+    font-family: 'piweek' !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: normal !important;
+    line-height: 1;
+    speak: none;
+    text-transform: none !important;
+}
+
+[class^='icon-']:before,
+[class*=' icon-']:before {
+    font-family: 'piweek' !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: normal !important;
+    line-height: 1;
+    speak: none;
+    text-transform: none !important;
+}
+
+.icon-e:before {
+    content: 'a';
+}
+.icon-k:before {
+    content: 'b';
+}
+.icon-pi:before {
+    content: 'c';
+}
+.icon-w:before {
+    content: 'd';
+}
+.icon-logo:before {
+    content: 'e';
+}

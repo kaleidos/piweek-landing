@@ -1,0 +1,32 @@
+{
+  "name": "Piweek",
+  "version": "0.0.1",
+  "description": "PiweekPage",
+  "main": "index.html",
+  "keywords": [
+    "Kaleidos",
+    "piweek"
+  ],
+  "author": "Kaleidos",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-cached": "0.0.3",
+    "gulp-changed": "^0.3.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-concat": "^2.2.0",
+    "gulp-connect": "^2.0.5",
+    "gulp-csslint": "^0.1.3",
+    "gulp-filesize": "0.0.6",
+    "gulp-imagemin": "^0.2.0",
+    "gulp-jade": "^0.5.0",
+    "gulp-minify-css": "^0.3.1",
+    "gulp-newer": "^0.3.0",
+    "gulp-notify": "^1.3.1",
+    "gulp-plumber": "^0.6.3",
+    "gulp-ruby-sass": "^0.4.3",
+    "gulp-scss-lint": "0.0.6",
+    "gulp-styledocco": "0.0.1",
+    "gulp-watch": "^0.5.4"
+  }
+}

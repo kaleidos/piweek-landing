@@ -1,0 +1,19 @@
+{
+  "name": "Do It Yourself",
+  "version": "0.0.1",
+  "authors": [
+    "Xavier Julián <xavier.julian@kaleidos.net>"
+  ],
+  "description": "Test projects for organization and optimization",
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
