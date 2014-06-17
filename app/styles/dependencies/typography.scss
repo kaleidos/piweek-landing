@@ -1,6 +1,6 @@
 // Typography
 
-@each $font-face in piweek, OpenSans-Bold, OpenSans-Light, OpenSans-Regular, OpenSans-Semibold {
+@each $font-face in piweek, OpenSans-Bold, OpenSans-Light, OpenSans-Regular, VarelaRound-Regular {
     @font-face {
         font-family: '#{$font-face}';
         src: url('../fonts/#{$font-face}.eot?#iefix') format('embedded-opentype'),
@@ -129,4 +129,7 @@ a:visited {
 }
 .icon-logo:before {
     content: 'e';
+}
+.icon-arrow-circle:before {
+    content: 'f';
 }

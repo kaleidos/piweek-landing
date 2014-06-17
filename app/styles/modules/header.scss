@@ -3,22 +3,22 @@
     background: url('/images/piweek.jpg') no-repeat center center;
     background-size: cover;
     .wrapper {
-        @include table-flex-child(0, auto, 0, 960px);
+        @include table-flex-child(0, auto, 0, 360px);
         text-align: center;
     }
     .icon-logo {
         color: $purple;
-        font-size: 110px;
+        font-size: 50px;
         margin-right: 1rem;
         vertical-align: middle;
     }
     .site-title {
         color: $white;
-        font: normal 100px/150px 'piweek';
+        font: normal 50px 'piweek';
         letter-spacing: -10px;
     }
     .site-description {
-        @extend %xlarge;
+        @extend %medium;
         color: $white;
         line-height: 3rem;
         span {
@@ -33,4 +33,29 @@
             }
         }
     }
+    .icon-arrow-circle {
+        @extend %xxlarge;
+        @include transition(opacity .2s ease-in);
+        color: $whitish;
+        opacity: .4;
+        position: relative;
+        top: 100%;
+        &:hover {
+            @include transition(opacity .2s ease-in);
+            opacity: .9;
+        }
+    }
+    @media screen and (min-width: 640px) {
+        .wrapper {
+            @include table-flex-child(0, auto, 0, 960px);
+        }
+        .icon-logo,
+        .site-title {
+            font-size: 100px;
+        }
+        .site-description {
+            font-size: 2rem;
+        }
+    }
 }
+
