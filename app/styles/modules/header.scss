@@ -2,6 +2,7 @@
     @include table-flex(center, center, flex, column, wrap, center);
     background: url('/images/piweek.jpg') no-repeat center center;
     background-size: cover;
+    position: relative;
     .wrapper {
         @include table-flex-child(0, auto, 0, 360px);
         text-align: center;
@@ -36,10 +37,11 @@
     .icon-arrow-circle {
         @extend %xxlarge;
         @include transition(opacity .2s ease-in);
+        bottom: 1%;
         color: $whitish;
         opacity: .4;
-        position: relative;
-        top: 100%;
+        position: absolute;
+        text-align: center;
         &:hover {
             @include transition(opacity .2s ease-in);
             opacity: .9;
