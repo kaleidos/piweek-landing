@@ -1,0 +1,72 @@
+.projects {
+    background-color: #2c2c2c;
+    color: $white;
+    padding: 5rem 0;
+    .wrapper {
+        margin: 0 auto;
+        position: relative;
+        width: 960px;
+    }
+    .projects-header {
+        position: relative;
+        z-index: 9;
+    }
+    .project-nav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 9;
+        .icon {
+            @extend %xxlarge;
+        }
+    }
+    .projects-title {
+        @extend %xxlarge;
+        color: $orange;
+    }
+    .project {
+        color: $white;
+        display: none;
+        margin-top: 3rem;
+        position: relative;
+        z-index: 9;
+        &.active {
+            display: block;
+        }
+    }
+    .capture {
+        opacity: .8;
+        width: 100%;
+    }
+    .dev {
+        @extend %small;
+        color: $white;
+    }
+    a {
+        color: $orange;
+    }
+    .project-name {
+        color: $white;
+    }
+    p {
+        color: $white;
+    }
+}
+
+@each $project in macadjan, parsero, ttdp, taiga, comics {
+    .#{$project} {
+        position: relative;
+        &:before {
+            background: url('/images/#{$project}.jpg') no-repeat center center;
+            background-size: cover;
+            bottom: 0;
+            content: '';
+            left: 0;
+            opacity: .2;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 0;
+        }
+    }
+}

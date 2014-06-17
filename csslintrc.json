@@ -15,5 +15,6 @@
     "import": false,
     "important": false,
     "regex-selectors": false,
-    "unqualified-attributes": false
+    "unqualified-attributes": false,
+    "adjoining-classes": false
 }

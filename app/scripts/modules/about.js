@@ -9,6 +9,7 @@ app.view('about', ['$el'], function ($el) {
         isVisible();
     });
 
+    // Functions
     function isVisible() {
         $.each(images, function( index, value ) {
             var visibility = isScrolledIntoView(value);
@@ -18,7 +19,6 @@ app.view('about', ['$el'], function ($el) {
         });
     }
 
-    // Function
     function isScrolledIntoView(elem) {
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
