@@ -1,0 +1,35 @@
+.about {
+    background-color: #2c2c2c;
+    background-image: url('/images/piweek-wtf.png');
+    padding: 5rem 0;
+    .wrapper {
+        margin: 0 auto;
+        width: 960px;
+    }
+    .about-title {
+        @extend %xxlarge;
+        color: $orange;
+    }
+    .about-piece {
+        color: $white;
+        @include columns(2 3rem);
+    }
+    .pictures {
+        margin-top: 2rem;
+    }
+    figure {
+        @include transition (opacity .3s ease-in);
+        display: inline-block;
+        margin: 0;
+        opacity: 0;
+        width: 475px;
+        &.display {
+            @include transition (opacity .3s ease-in);
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+}

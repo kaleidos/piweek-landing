@@ -1,10 +1,10 @@
 {
-    "compatible-vendor-prefixes": true,
+    "compatible-vendor-prefixes": false,
     "empty-rules": true,
     "duplicate-properties": true,
     "ids": true,
     "known-properties": true,
-    "overqualified-elements": true,
+    "overqualified-elements": false,
     "shorthand": true,
     "text-indent": true,
     "unique-headings": false,

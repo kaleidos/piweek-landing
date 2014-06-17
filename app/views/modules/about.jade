@@ -1,9 +1,24 @@
-section.about
-    h1.about-title So, What is this ΠWEEK thing?
-    include ../pieces/about
-    div.pictures
-   - for (var x = 0; x < 5; x++)
-        figure
-            a(href="", title="Picture Title")
-                img.avatar(src="http://thecodeplayer.com/u/uifaces/12.jpg", alt="username")
-                figcaption Picture by aguadeborrajas
+section.about(view="about")
+    div.wrapper
+        h1.about-title ΠWEEK? What is that?
+        div.about-piece
+            include ../pieces/about
+        div.pictures
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about01.jpg", alt="username", width='480', height='320')
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about02.jpg", alt="username", width='480', height='320')
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about03.jpg", alt="username", width='480', height='320')
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about04.jpg", alt="username", width='480', height='320')
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about05.jpg", alt="username", width='480', height='320')
+            figure
+                a(href="", title="Picture Title")
+                    img.avatar(src="/images/about06.jpg", alt="username", width='480', height='320')

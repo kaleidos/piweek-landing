@@ -19,7 +19,7 @@
         letter-spacing: -10px;
     }
     .site-description {
-        @extend %medium;
+        @extend %small;
         color: $white;
         line-height: 3rem;
         span {
@@ -56,7 +56,7 @@
             font-size: 100px;
         }
         .site-description {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
     }
 }
