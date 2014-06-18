@@ -132,6 +132,9 @@ gulp.task("copy", function() {
     gulp.src(paths.app+"/images/*")
         .pipe(gulp.dest(paths.dist+"/images/"));
 
+    gulp.src(paths.app+"/video/*")
+        .pipe(gulp.dest(paths.dist+"/video/"));
+
     gulp.src("bower_components/normalize.css/normalize.css")
         .pipe(gulp.dest(paths.dist+"/styles/"));
 });

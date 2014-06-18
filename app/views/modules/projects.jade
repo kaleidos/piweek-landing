@@ -1,4 +1,4 @@
-section.projects.macadjan(view="projects")
+section.projects.taiga(view="projects")
     div.wrapper
         div.projects-header
             h1.projects-title Showcase
@@ -6,7 +6,8 @@ section.projects.macadjan(view="projects")
         div.project-nav
             a.icon.icon-arrow-left.prev-project(href="", title="Prev project")
             a.icon.icon-arrow-right.next-project(href="", title="Next project")
-        article.project.active
+
+        article.project.active(data-project="macadjan")
             figure.capture
                 a(href="", title="Macadjan", target="_blank")
                     img(src="images/macadjan-capture.jpg", alt="Macadjan Capture")
@@ -16,13 +17,47 @@ section.projects.macadjan(view="projects")
             h3.dev
                 span Developed by
                 a(href="", title="Andrés Moya")  Andrés Moya
-        article.project
-            h2
-                a(href="", title="", target="_blank") Parsero
-            figure
+
+        article.project(data-project="parsero")
+            figure.capture
                 a(href="", title="Parsero", target="_blank")
-                    img(src="", alt="Parsero Screenshot")
-            h3
+                    img(src="images/parsero-capture.jpg", alt="Parsero Capture")
+            h2.project-name
+                a(href="", title="", target="_blank") Parsero
+            p Parser combinator library inspired by Haskell Parsec
+            h3.dev
                 span Developed by
-                a(href="", title="Alejandro Gómez") Alejandro Gómez
-            p Parser combinator library inspired by Haskell's Parsec.
+                a(href="", title="Alejandro Gómez")  Alejandro Gómez
+
+        article.project(data-project="ttdp")
+            figure.capture
+                a(href="", title="Tutasadeparo", target="_blank")
+                    img(src="images/ttdp-capture.jpg", alt="Tutasadeparo Capture")
+            h2.project-name
+                a(href="", title="", target="_blank") Tutasadeparo
+            p En TTparo.es utilizamos los microdatos de la EPA, filtramos, agregamos y seleccionamos aquellas variables más relevantes para determinar cuál es la tasa de paro que te afecta a ti, por tu perfil específico, y te proporcionamos herramientas para que veas cómo ha evolucionado este perfil a través del tiempo y en qué provincias esta tasa es más favorable.
+            h3.dev
+                span Developed by
+                a(href="", title="Yamila Moreno")  Yamila Moreno
+
+        article.project(data-project="comics")
+            figure.capture
+                a(href="", title="ComicsMagic", target="_blank")
+                    img(src="images/comic-capture.jpg", alt="Comics Magic Capture")
+            h2.project-name
+                a(href="", title="", target="_blank") Comics Magic Reader
+            p Comic Magic Reader es una aplicación para leer cómics, rápida y elegante.
+            h3.dev
+                span Developed by
+                a(href="", title="Pablo Alba")  Pablo Alba
+
+        article.project(data-project="taiga")
+            figure.capture
+                a(href="", title="Taiga", target="_blank")
+                    img(src="images/taiga-capture.jpg", alt="Taiga Capture")
+            h2.project-name
+                a(href="", title="", target="_blank") Taiga
+            p Project management web application with scrum in mind! Built on top of Django and AngularJS
+            h3.dev
+                span Developed by
+                a(href="", title="Pablo Alba")  Andrey Antukh

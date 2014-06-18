@@ -57,16 +57,23 @@
     .#{$project} {
         position: relative;
         &:before {
+            @include transition (.2s ease-in .2s);
             background: url('/images/#{$project}.jpg') no-repeat center center;
             background-size: cover;
             bottom: 0;
             content: '';
             left: 0;
-            opacity: .2;
+            opacity: 0;
             position: absolute;
             right: 0;
             top: 0;
             z-index: 0;
+        }
+        &.ready {
+            &:before {
+                @include transition (.2s ease-in .2s);
+                opacity: .2;
+            }
         }
     }
 }
