@@ -1,0 +1,44 @@
+.faq {
+    background-color: #2c2c2c;
+    padding: 5rem 0;
+    .wrapper {
+        margin: 0 auto;
+        width: 960px;
+    }
+    .faq-title {
+        @extend %xxlarge;
+        color: $orange;
+        font-family: 'VarelaRound-Regular';
+        margin-bottom: 2rem;
+    }
+    .diacritica {
+        margin-bottom: 2rem;
+        iframe {
+            height: 721px;
+            width: 100%;
+        }
+    }
+    .single-question {
+        @include table-flex();
+        margin-bottom: 2rem;
+        div {
+            border-radius: 10px;
+        }
+    }
+    .question {
+        @include table-flex-child(1, 0);
+        @extend %xlarge;
+        color: $orange;
+        font-family: 'OpenSans-Bold';
+        line-height: 2.3rem;
+        margin: 0 1rem;
+        padding: 1rem;
+    }
+    .answer {
+        @include table-flex-child(2, 0);
+        @extend %large;
+        background: lighten($blackish, 11%);
+        color: $white;
+        padding: 1rem;
+    }
+}

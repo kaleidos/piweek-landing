@@ -8,6 +8,7 @@
     .about-title {
         @extend %xxlarge;
         color: $orange;
+        font-family: 'VarelaRound-Regular';
     }
     .about-piece {
         color: $white;
@@ -27,8 +28,8 @@
             opacity: 1;
         }
         img {
-            width: 100%;
             border-radius: 20px;
+            width: 100%;
         }
     }
 }
