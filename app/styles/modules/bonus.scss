@@ -1,6 +1,5 @@
 .bonus {
     background-color: $black;
-    box-shadow: -100px 0 100px #000;
     .wrapper {
         margin: 0 auto;
         padding: 5rem 0;
@@ -11,7 +10,7 @@
         width: 100%;
         .color {
             @include table-flex-child(1, 0);
-            height: .2rem;
+            height: .4rem;
         }
     }
     .bonus-title {
