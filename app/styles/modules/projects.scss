@@ -73,7 +73,7 @@
         position: relative;
         &:before {
             @include transition (.2s ease-in .2s);
-            background: url('/images/#{$project}.jpg') no-repeat center center;
+            background: url('images/#{$project}.jpg') no-repeat center center;
             background-size: cover;
             bottom: 0;
             content: '';
