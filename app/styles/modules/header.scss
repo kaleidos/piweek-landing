@@ -1,6 +1,6 @@
 .header {
     @include table-flex(center, center, flex, column, wrap, center);
-    background: url('/images/piweek.jpg') no-repeat center center;
+    background: url('images/piweek.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     .wrapper {
