@@ -3,12 +3,13 @@
     padding: 5rem 0;
     .wrapper {
         margin: 0 auto;
-        width: 960px;
+        width: 100%;
     }
     .about-title {
         @extend %xxlarge;
         color: $orange;
         font-family: 'VarelaRound-Regular';
+        line-height: 3rem;
     }
     .about-piece {
         color: $white;
@@ -22,7 +23,7 @@
         display: inline-block;
         margin: 0;
         opacity: 0;
-        width: 475px;
+        width: 100%;
         &.display {
             @include transition (opacity .3s ease-in);
             opacity: 1;
@@ -30,6 +31,45 @@
         img {
             border-radius: 20px;
             width: 100%;
+        }
+    }
+}
+
+/////////////////////////////
+// RESPONSIVE
+/////////////////////////////
+
+@include respond-to(handhelds) {
+    .about {
+        padding: 2rem 0;
+        .wrapper {
+            padding: 0 .5rem;
+        }
+        .about-piece {
+            @include columns(1);
+        }
+    }
+}
+
+@include respond-to(medium-screens) {
+    .about {
+        padding: 2rem 0;
+        .wrapper {
+            padding: 0 .5rem;
+        }
+        .about-piece {
+            @include columns(1);
+        }
+    }
+}
+
+@include respond-to(wide-screens) {
+    .about {
+        .wrapper {
+            width: 960px;
+        }
+        figure {
+            width: 475px;
         }
     }
 }

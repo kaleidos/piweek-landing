@@ -5,7 +5,7 @@
     .wrapper {
         margin: 0 auto;
         position: relative;
-        width: 960px;
+        width: 100%;
     }
     .projects-header {
         position: relative;
@@ -51,6 +51,7 @@
         width: 100%;
         img {
             border-radius: 10px;
+            width: 100%;
         }
     }
     .dev {
@@ -89,6 +90,37 @@
                 @include transition (.2s ease-in .2s);
                 opacity: .2;
             }
+        }
+    }
+}
+
+/////////////////////////////
+// RESPONSIVE
+/////////////////////////////
+
+@include respond-to(handhelds) {
+    .projects {
+        padding: 2rem 0;
+        .wrapper {
+            padding: .5rem;
+        }
+    }
+}
+
+@include respond-to(medium-screens) {
+    .projects {
+        padding: 2rem 0;
+        .wrapper {
+            padding: .5rem;
+        }
+    }
+}
+
+@include respond-to(wide-screens) {
+    .projects {
+        padding: 2rem 0;
+        .wrapper {
+            width: 100%;
         }
     }
 }

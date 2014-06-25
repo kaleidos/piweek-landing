@@ -4,7 +4,7 @@
     background-size: cover;
     position: relative;
     .wrapper {
-        @include table-flex-child(0, auto, 0, 360px);
+        @include table-flex-child(0, auto, 0, 960px);
         text-align: center;
     }
     .icon-logo {
@@ -47,17 +47,46 @@
             opacity: .9;
         }
     }
-    @media screen and (min-width: 640px) {
+}
+
+
+/////////////////////////////
+// RESPONSIVE
+/////////////////////////////
+
+@include respond-to(handhelds) {
+    .header {
+        .wrapper {
+            @include table-flex-child(0, auto, 0, 100%);
+        }
+        .site-description {
+            line-height: 1rem;
+        }
+    }
+}
+
+@include respond-to(medium-screens) {
+    .header {
+        .wrapper {
+            @include table-flex-child(0, auto, 0, 100%);
+        }
+        .site-description {
+            line-height: 1rem;
+        }
+    }
+}
+
+@include respond-to(wide-screens) {
+    .header {
         .wrapper {
             @include table-flex-child(0, auto, 0, 960px);
+        }
+        .site-description {
+            font-size: 1.8rem;
         }
         .icon-logo,
         .site-title {
             font-size: 100px;
         }
-        .site-description {
-            font-size: 1.8rem;
-        }
     }
 }
-
