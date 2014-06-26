@@ -18,7 +18,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rimraf = require('gulp-rimraf'),
     cache = require("gulp-cached"),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    merge = require('merge-stream');
 
 /**************************************
     REQUIRED PATHS
@@ -127,17 +128,18 @@ gulp.task("imagemin", function () {
 // Copy Files
 gulp.task("copy", function() {
     // Copy fonts
-    gulp.src(paths.app+"/fonts/*")
+    t1 = gulp.src(paths.app+"/fonts/*")
         .pipe(gulp.dest(paths.dist+"/fonts/"));
 
-    gulp.src(paths.app+"/images/*")
+    t2 = gulp.src(paths.app+"/images/*")
         .pipe(gulp.dest(paths.dist+"/images/"));
 
-    gulp.src(paths.app+"/video/*")
+    t3 = gulp.src(paths.app+"/video/*")
         .pipe(gulp.dest(paths.dist+"/video/"));
 
-    gulp.src("bower_components/normalize.css/normalize.css")
+    t4 = gulp.src("bower_components/normalize.css/normalize.css")
         .pipe(gulp.dest(paths.dist+"/styles/"));
+    return merge(t1, t2, t3, t4);
 });
 
 gulp.task("clean", function() {
