@@ -47,6 +47,17 @@
         @extend %small;
         color: $white;
     }
+    ul {
+        padding-left: .2rem;
+        margin: 0;
+        list-style: none;
+        a {
+            &:hover {
+                @include transition(color .2s linear);
+                color: $white;
+            }
+        }
+    }
     a {
         color: $orange;
     }

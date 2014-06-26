@@ -68,6 +68,9 @@
         .wrapper {
             width: 960px;
         }
+        .diacritica {
+            height: 721px;
+        }
     }
     .single-question {
         @include table-flex();
@@ -79,4 +82,5 @@
     .answer {
         @include table-flex-child(2, 0);
     }
+
 }

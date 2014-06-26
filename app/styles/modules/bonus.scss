@@ -45,7 +45,9 @@
 
 @include respond-to(wide-screens) {
     .bonus {
-        width: 960px;
+        .wrapper {
+            width: 960px;
+        }
         .video {
             iframe {
                 height: 721px;
