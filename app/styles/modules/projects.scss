@@ -8,9 +8,6 @@
         width: 100%;
     }
     .project-nav {
-        position: absolute;
-        right: 0;
-        top: 0;
         z-index: 9;
         .icon {
             @extend %xxlarge;
@@ -119,6 +116,9 @@
         .wrapper {
             padding: .5rem;
         }
+        .project-name {
+            line-height: 2rem;
+        }
     }
 }
 
@@ -134,6 +134,11 @@
         .captures,
         .project-data {
             @include table-flex-child(1, 0);
+        }
+        .project-nav {
+            position: absolute;
+            right: 0;
+            top: 0;
         }
     }
 }

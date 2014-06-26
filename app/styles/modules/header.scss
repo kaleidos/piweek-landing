@@ -39,9 +39,11 @@
         @include transition(opacity .2s ease-in);
         bottom: 1%;
         color: $whitish;
+        left: 0;
         opacity: .4;
         position: absolute;
         text-align: center;
+        width: 100%;
         &:hover {
             @include transition(opacity .2s ease-in);
             opacity: .9;
@@ -60,7 +62,7 @@
             @include table-flex-child(0, auto, 0, 100%);
         }
         .site-description {
-            line-height: 1rem;
+            line-height: 1.2rem;
         }
     }
 }
