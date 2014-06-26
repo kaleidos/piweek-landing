@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     size = require('gulp-filesize'),
     notify = require("gulp-notify"),
     plumber = require('gulp-plumber'),
+    rimraf = require('gulp-rimraf'),
     cache = require("gulp-cached"),
     connect = require('gulp-connect');
 
@@ -137,6 +138,18 @@ gulp.task("copy", function() {
 
     gulp.src("bower_components/normalize.css/normalize.css")
         .pipe(gulp.dest(paths.dist+"/styles/"));
+});
+
+gulp.task("clean", function() {
+    // Copy fonts
+    gulp.src(paths.dist, { read: false })
+        .pipe(rimraf({force: true}));
+});
+
+gulp.task("cleanAll", function() {
+    // Copy fonts
+    gulp.src([paths.dist, "bower_components", "node_modules"], { read: false })
+        .pipe(rimraf({force: true}));
 });
 
 /**************************************
