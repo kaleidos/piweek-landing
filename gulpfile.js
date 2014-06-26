@@ -72,6 +72,7 @@ gulp.task("scss-lint", function() {
 // Sass Files
 gulp.task("sass", function () {
     return gulp.src(paths.sassMain)
+    .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(paths.distStyles));
 });

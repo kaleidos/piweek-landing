@@ -3,7 +3,7 @@
     .wrapper {
         margin: 0 auto;
         padding: 5rem 0;
-        width: 960px;
+        width: 100%;
     }
     .multicolor {
         @include table-flex();
@@ -20,5 +20,36 @@
     }
     p {
         color: $white;
+    }
+}
+
+/////////////////////////////
+// RESPONSIVE
+/////////////////////////////
+
+@include respond-to(handhelds) {
+    .bonus {
+        .wrapper {
+            padding: .5rem;
+        }
+    }
+}
+
+@include respond-to(medium-screens) {
+    .bonus {
+        .wrapper {
+            padding: .5rem;
+        }
+    }
+}
+
+@include respond-to(wide-screens) {
+    .bonus {
+        width: 960px;
+        .video {
+            iframe {
+                height: 721px;
+            }
+        }
     }
 }
