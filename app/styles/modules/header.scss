@@ -34,6 +34,11 @@
             }
         }
     }
+    .next-edition {
+        @extend %xlarge;
+        color: $orange;
+        font-family: OpenSans-Bold;
+    }
     .icon-arrow-circle {
         @extend %xxlarge;
         @include transition(opacity .2s ease-in);

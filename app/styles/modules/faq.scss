@@ -20,6 +20,10 @@
             height: 100%;
             width: 100%;
         }
+        p,
+        strong {
+            color: $white;
+        }
     }
     .single-question {
         margin-bottom: 2rem;
