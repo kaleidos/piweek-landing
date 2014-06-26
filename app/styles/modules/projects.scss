@@ -7,10 +7,6 @@
         position: relative;
         width: 100%;
     }
-    .projects-header {
-        position: relative;
-        z-index: 9;
-    }
     .project-nav {
         position: absolute;
         right: 0;
@@ -20,10 +16,14 @@
             @extend %xxlarge;
         }
     }
+    .projects-header {
+        position: relative;
+        z-index: 9;
+    }
     .projects-title {
         @extend %xxlarge;
+        @extend %title;
         color: $orange;
-        font-family: 'VarelaRound-Regular';
     }
     .project {
         color: $white;
@@ -35,15 +35,8 @@
             display: block;
         }
     }
-    .project-container {
-        @include table-flex();
-    }
-    .captures,
     .project-data {
-        @include table-flex-child(1, 0);
-    }
-    .project-data {
-        margin-left: 3rem;
+        margin-right: 3rem;
     }
     .capture {
         margin: 1rem 0;
@@ -104,6 +97,20 @@
         .wrapper {
             padding: .5rem;
         }
+        .project-nav {
+            position: relative;
+            text-align: center;
+        }
+        .project-name {
+            line-height: 2rem;
+        }
+        .projects-header,
+        .project-data {
+            text-align: center;
+        }
+        .project-data {
+            margin: 0;
+        }
     }
 }
 
@@ -121,6 +128,13 @@
         padding: 2rem 0;
         .wrapper {
             width: 960px;
+        }
+        .project-container {
+            @include table-flex();
+        }
+        .captures,
+        .project-data {
+            @include table-flex-child(1, 0);
         }
     }
 }
