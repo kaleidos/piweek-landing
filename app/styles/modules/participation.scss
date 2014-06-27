@@ -1,0 +1,53 @@
+.participation {
+    @extend %title;
+    @extend %xlarge;
+    background: #761cec;
+    color: $white;
+    padding: 5rem 0;
+    text-align: center;
+    .wrapper {
+        width: 100%;
+    }
+    .participation-title {
+        color: $white;
+        line-height: 3.5rem;
+    }
+    .date {
+        @extend %xlarge;
+        color: $black;
+        vertical-align: middle;
+    }
+    a {
+        color: $orange;
+    }
+}
+
+/////////////////////////////
+// RESPONSIVE
+/////////////////////////////
+
+@include respond-to(handhelds) {
+    .participation {
+        .wrapper {
+            padding: 0 .5rem;
+        }
+    }
+}
+
+@include respond-to(medium-screens) {
+    .participation {
+        .wrapper {
+            padding: 0 .5rem;
+        }
+    }
+}
+
+@include respond-to(wide-screens) {
+    .participation {
+        .wrapper {
+            margin: 0 auto;
+            width: 960px;
+        }
+    }
+
+}

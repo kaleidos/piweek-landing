@@ -38,6 +38,14 @@
         @extend %xlarge;
         color: $orange;
         font-family: OpenSans-Bold;
+        line-height: 2.5rem;
+    }
+    .participate {
+        color: $white;
+        &:hover {
+            @include transition(color .3s linear);
+            color: $orange;
+        }
     }
     .icon-arrow-circle {
         @extend %xxlarge;
@@ -69,6 +77,11 @@
         .site-description {
             line-height: 1.2rem;
         }
+        .next-edition {
+            span {
+                display: block;
+            }
+        }
     }
 }
 
@@ -79,6 +92,11 @@
         }
         .site-description {
             line-height: 1rem;
+        }
+        .next-edition {
+            span {
+                display: block;
+            }
         }
     }
 }

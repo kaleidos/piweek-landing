@@ -13,7 +13,7 @@
         margin-bottom: 2rem;
     }
     .diacritica {
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         embed,
         iframe,
         object {
@@ -23,6 +23,7 @@
         p,
         strong {
             color: $white;
+            text-align: right;
         }
     }
     .single-question {
