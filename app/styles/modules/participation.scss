@@ -9,11 +9,12 @@
         width: 100%;
     }
     .participation-title {
+        @extend %participation-title;
         color: $white;
-        line-height: 3.5rem;
     }
     .date {
         @extend %xlarge;
+        @extend %date;
         color: $black;
         vertical-align: middle;
     }
@@ -27,18 +28,38 @@
 /////////////////////////////
 
 @include respond-to(handhelds) {
+    %large-font {font-size: 1.2rem;}
+    %xlarge-font {font-size: 2rem;}
     .participation {
         .wrapper {
             padding: 0 .5rem;
         }
     }
+    %participation-title {
+        font-size: 2rem;
+        line-height: 2.2rem;
+    }
+    %date {
+        line-height: 2.2rem;
+        padding: 0 4rem;
+    }
 }
 
 @include respond-to(medium-screens) {
+    %large-font {font-size: 1.2rem;}
+    %xlarge-font {font-size: 2rem;}
     .participation {
         .wrapper {
             padding: 0 .5rem;
         }
+    }
+    %participation-title {
+        font-size: 2rem;
+        line-height: 2.2rem;
+    }
+    %date {
+        line-height: 2.2rem;
+        padding: 0 4rem;
     }
 }
 
@@ -49,5 +70,10 @@
             width: 960px;
         }
     }
-
+    %participation-title {
+        line-height: 3.5rem;
+    }
+    %date {
+        padding: 0;
+    }
 }
