@@ -37,9 +37,17 @@ section.projects.macadjan.ready(view="projects")
                 div.project-data
                     h2.project-name
                         a(href="https://github.com/alejandrogomez/parsero", title="", target="_blank") Parsero
-                    p Parser combinator library inspired by Haskell Parsec
-                    p parsero makes parsers first-class entities and provides a set of combinators for deriving new parsers out of existing ones. A few primitive parsers are included for convenience, too.
-                    p Generated parsers will fail with meaningful error messages, highlighting both the position on the input string where the parse error happened and what constructions were expected.
+                    p.
+                        Parsero is a Clojure library for generating parsers, it exposes a DSL that allows to describe the production rules of a formal language's
+                        grammar and a set of combinators for creating parsers. The library
+                        allows to express context-free grammars. Parsers are first-class values
+                        and can be combined to produce new ones.
+                    p.
+                        Parsero's design is inspired by Haskell's Parsec, whose implementation
+                        utilizes monads. Monads allow the composition of parsers and the
+                        generation of complex parsers with a set of very simple primitives.
+                        Parser definitions using parsero look a lot like the formal definition
+                        of a grammar, which makes them readable and easy to implement.
                     h3.dev
                         span Developed by
                         a(href="", title="Alejandro Gómez")  Alejandro Gómez
@@ -100,7 +108,7 @@ section.projects.macadjan.ready(view="projects")
                         li
                             a(href="http://kaleidos.net/708090/", title="Pablo Alba", target="blank") Pablo Alba [Engineer]
                         li
-                             span Juan De la Cruz [Logo Design]
+                             a(href="https://twitter.com/elhombretecla", title="Juan de la Cruz", target="blank") Juan de la Cruz [Logo design]
                 div.captures
                     figure.capture
                         a(href="", title="ComicsMagic", target="_blank")
@@ -113,7 +121,7 @@ section.projects.macadjan.ready(view="projects")
             div.project-container
                 div.project-data
                     h2.project-name
-                        a(href="https://github.com/taigaio", title="", target="_blank") Taiga
+                        a(href="https://github.com/taigaio", title="Taiga", target="_blank") Taiga
                     p Taiga is a free, full-featured agile project management layer for your team
                     ul.dev
                         li
@@ -144,3 +152,61 @@ section.projects.macadjan.ready(view="projects")
                     figure.capture
                         a(href="", title="Taiga", target="_blank")
                             img(src="images/taiga-capture_02.jpg", alt="Taiga Capture")
+
+        article.project(data-project="fogg")
+             div.project-container
+                 div.project-single
+                     figure.capture
+                         a(href="https://github.com/PIWEEK/mrfogg", title="MrFogg", target="_blank")
+                             img(src="images/fogg-capture.jpg", alt="MrFogg Capture")
+                     h2.project-name
+                        a(href="https://github.com/PIWEEK/mrfogg", title="MrFogg", target="_blank") MrFogg
+                     p The idea of Mr. Fogg is to provide a enjoyable platform to organize your travels and meetings. The users can create "tasks" and attach "cards" that can be shared, asigned and discussed. With this tool you will not have to create another shared Google Doc to organize your travels!
+                     ul.dev
+                        li
+                            span Developed by
+                        li
+                            a(href="http://kaleidos.net/FFFF00/", title="Alonso Torres", target="blank") Alonso Torres [Engineer, JS]
+                        li
+                            a(href="http://kaleidos.net/C0FF33/", title="Miguel de la Cruz", target="blank") Miguel de la Cruz [Engineer]
+                        li
+                            a(href="http://kaleidos.net/FF9900/", title="Mario García", target="blank") Mario García [Engineer]
+                        li
+                            a(href="https://github.com/gnufede", title="Federico Mon Trotti", target="blank") Federico Mon Trotti [JS]
+                        li
+                            a(href="http://kaleidos.net/FFCC00/", title="Ramiro Sánchez", target="blank") Ramiro Sánchez [Front-end]
+                        li
+                            a(href="https://twitter.com/elhombretecla", title="Juan de la Cruz", target="blank") Juan de la Cruz [Design]
+
+                 div.project-single
+                     figure.capture
+                         a(href="https://github.com/lmivan/yasn", title="YASN", target="_blank")
+                             img(src="images/yasn-capture.jpg", alt="YASN Capture")
+                     h2.project-name
+                        a(href="https://github.com/lmivan/yasn", title="YASN", target="_blank") YASN
+                     p Yet Another Social Network is a Twitter-like clone developed as a proof-of-concept to create an uberfast social network. The idea is that in the big ones social networks like Instagram the ratio between the reads and the writes is far too long for the reads. With millions of users the reads must be really fast and it's acceptable that the writes takes a few milliseconds to propagate the changes to all the followers.
+                     ul.dev
+                        li
+                            span Developed by
+                        li
+                            a(href="http://kaleidos.net/4B0082/", title="Iván lópez", target="blank") Iván lópez [Engineer]
+                        li
+                            a(href="https://twitter.com/elhombretecla", title="Juan de la Cruz", target="blank") Juan de la Cruz [Logo design]
+
+                 div.project-single
+                     figure.capture
+                         img(src="images/defcon-capture.jpg", alt="yourcon Capture")
+                     h2.project-name
+                        span Yourcon
+                     p Defcon is an alert posture used by the United States Armed Forces. It prescribes five graduated levels of readiness (or states of alert) for the U.S. military, and increase in severity from DEFCON 5 (least severe) to DEFCON 1 (most severe). Imagine using it in a visual way for sharing info. Why using 140 characters if 99% times a number from 1 to 5 is just enough!
+                     ul.dev
+                        li
+                            span Developed by
+                        li
+                            a(href="http://kaleidos.net/FC8EAC/", title="Alejandro Alonso", target="blank") Alejandro Alonso [Engineer]
+                        li
+                            a(href="http://kaleidos.net/A5694F/", title="Andrey Antukh", target="blank") Andrey Antukh [Engineer]
+                        li
+                            a(href="http://kaleidos.net/FFF8E7/", title="David Barragán", target="blank") David Barragán [Engineer]
+                        li
+                            a(href="http://kaleidos.net/007000/", title="Jesús Espino", target="blank") Jesús Espino [Engineer]

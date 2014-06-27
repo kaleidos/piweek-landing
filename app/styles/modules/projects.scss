@@ -1,7 +1,7 @@
 .projects {
     background-color: #2c2c2c;
     color: $white;
-    padding: 5rem 0;
+    padding: 5rem 0 10rem;
     .wrapper {
         margin: 0 auto;
         position: relative;
@@ -48,9 +48,9 @@
         color: $white;
     }
     ul {
-        padding-left: .2rem;
-        margin: 0;
         list-style: none;
+        margin: 0;
+        padding-left: .2rem;
         a {
             &:hover {
                 @include transition(color .2s linear);
@@ -69,7 +69,7 @@
     }
 }
 
-@each $project in macadjan, parsero, ttdp, taiga, comics {
+@each $project in macadjan, parsero, ttdp, taiga, comics, fogg {
     .#{$project} {
         position: relative;
         &:before {
@@ -135,7 +135,6 @@
 
 @include respond-to(wide-screens) {
     .projects {
-        padding: 2rem 0;
         .wrapper {
             width: 960px;
         }
@@ -143,8 +142,15 @@
             @include table-flex();
         }
         .captures,
-        .project-data {
+        .project-data,
+        .project-single {
             @include table-flex-child(1, 0);
+        }
+        .project-single {
+            margin-right: 1rem;
+            &:last-child {
+                margin: 0;
+            }
         }
         .project-nav {
             position: absolute;
