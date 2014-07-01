@@ -9,13 +9,15 @@ html
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         link(rel='stylesheet', href='styles/main.css', type='text/css' )
         link(rel='stylesheet', href='styles/normalize.css', type='text/css' )
-
         block head
-
     body
         block content
 
     footer
         script(type='text/javascript',  src='scripts/libs.js')
+        script(type="text/javascript").
+            var windowheight = $(window).height();
+            $('.header').height(windowheight);
+            console.log($('.header'));
         script(type='text/javascript',  src='scripts/script.js')
         block footer

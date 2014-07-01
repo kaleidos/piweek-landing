@@ -44,7 +44,4 @@ app.view('header', ['$el'], function ($el) {
         }, 900, 'swing');
     }
 
-    // init on start
-    changeWindowSize();
-
 });
