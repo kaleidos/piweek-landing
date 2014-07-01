@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
 
     imagemin = require('gulp-imagemin'),
+    pngcrush = require('imagemin-pngcrush'),
 
     watch = require('gulp-watch'),
     size = require('gulp-filesize'),
@@ -117,9 +118,13 @@ gulp.task("scripts", function () {
 
 gulp.task("imagemin", function () {
     return gulp.src(paths.images)
-    .pipe(plumber())
-    .pipe(imagemin({progressive: true}))
-    .pipe(gulp.dest(paths.dist+"/images"));
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush()]
+        }))
+        .pipe(plumber())
+        .pipe(gulp.dest(paths.dist+"/images"));
 });
 
 /**************************************

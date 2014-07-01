@@ -10,7 +10,7 @@
   "author": "Kaleidos",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.6.0",
+    "gulp": "^3.8.5",
     "gulp-cached": "0.0.3",
     "gulp-changed": "^0.3.0",
     "gulp-concat": "^2.2.0",
@@ -28,6 +28,8 @@
     "gulp-scss-lint": "0.0.6",
     "gulp-styledocco": "0.0.1",
     "gulp-watch": "^0.5.4",
+    "imagemin": "^0.4.6",
+    "imagemin-pngcrush": "^0.1.0",
     "merge-stream": "^0.1.1"
   }
 }
