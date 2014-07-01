@@ -13,7 +13,7 @@ app.view('media', ['$el'], function ($el) {
     function isVisible() {
         var visibility = isScrolledIntoView(video);
         if(visibility) {
-            video.prop("volume", 0.2);
+            video.prop("volume", 0.02);
             video[0].play();
         } else {
             video[0].pause();
