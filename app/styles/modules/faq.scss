@@ -44,6 +44,9 @@
         background: lighten($blackish, 11%);
         color: $white;
         padding: 1rem;
+        p {
+            margin: 0;
+        }
     }
 }
 
