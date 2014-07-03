@@ -3,6 +3,7 @@ app.view('media', ['$el'], function ($el) {
 
     //Vars
     var video = $el.find('video');
+    video.prop("volume", 0.02);
 
     //Events
     $(window).on('scroll',function() {
@@ -13,7 +14,6 @@ app.view('media', ['$el'], function ($el) {
     function isVisible() {
         var visibility = isScrolledIntoView(video);
         if(visibility) {
-            video.prop("volume", 0.02);
             video[0].play();
         } else {
             video[0].pause();
