@@ -33,6 +33,19 @@
             width: 100%;
         }
     }
+    .photo-mention {
+        color: $white;
+        margin-top: 1rem;
+        a {
+            @include transition (color .2s ease-in);
+            color: $orange;
+            font-family: 'OpenSans-Bold';
+            &:hover {
+                @include transition (color .2s ease-in);
+                color: $dark-orange;
+            }
+        }
+    }
 }
 
 /////////////////////////////
