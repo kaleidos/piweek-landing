@@ -63,7 +63,7 @@ p {
     img {
         margin: 0;
     }
-  }
+}
 
 em {
     font-style: italic;
@@ -141,4 +141,10 @@ a:visited {
 }
 .icon-arrow-left:before {
     content: 'h';
+}
+.icon-twitter:before {
+    content: 'i';
+}
+.icon-tumblr:before {
+    content: 'j';
 }

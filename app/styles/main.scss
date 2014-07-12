@@ -17,6 +17,9 @@ $prefix-for-spec:      true;
 @import 'dependencies/mixins';
 @import 'dependencies/responsive';
 
+//Components
+@import 'components/lightbox';
+
 //- Section
 @import 'modules/header';
 @import 'modules/about';
@@ -25,3 +28,4 @@ $prefix-for-spec:      true;
 @import 'modules/faq';
 @import 'modules/participation';
 @import 'modules/bonus';
+@import 'modules/started';

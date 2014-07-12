@@ -6,6 +6,7 @@ app.view('header', ['$el'], function ($el) {
     var learnMore = $el.find('.learn-more');
     var participate = $el.find('.participate');
     var participateGoal = $el.siblings('.participation');
+    var knowMore = $el.find('.lightbox .know-more');
 
     //Events
     $(window).on('resize',function() {
@@ -22,7 +23,13 @@ app.view('header', ['$el'], function ($el) {
         participateOn();
     });
 
+    knowMore.on('click' ,function(event) {
+        event.preventDefault();
+        hideLightbox();
+    });
+
     //Functions
+
     function changeWindowSize() {
         setTimeout(function() {
             var windowheight = $(window).height();
@@ -43,5 +50,18 @@ app.view('header', ['$el'], function ($el) {
             'scrollTop': participateGoalPos
         }, 900, 'swing');
     }
+
+    function start () {
+        $el.find('.lightbox').addClass('active');
+    }
+
+    function hideLightbox() {
+        $el.find('.lightbox').removeClass('active');
+    }
+
+    //Load Functions
+    setTimeout(function() {
+        start();
+    }, 1000);
 
 });
