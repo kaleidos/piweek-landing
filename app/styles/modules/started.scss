@@ -50,13 +50,32 @@
 /////////////////////////////
 
 @include respond-to(handhelds) {
+
     .piweek-started {
         @include table-flex-child(0, 90%, 0);
+        .title {
+            color: $white;
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
+        .description {
+            font-size: 1rem;
+            line-height: 1.3rem;
+        }
     }
 }
 
 @include respond-to(medium-screens) {
     .piweek-started {
         @include table-flex-child(0, 90%, 0);
+        .title {
+            color: $white;
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
+        .description {
+            font-size: 1rem;
+            line-height: 1.3rem;
+        }
     }
 }

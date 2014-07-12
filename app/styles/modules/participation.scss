@@ -28,8 +28,6 @@
 /////////////////////////////
 
 @include respond-to(handhelds) {
-    %large-font {font-size: 1.2rem;}
-    %xlarge-font {font-size: 2rem;}
     .participation {
         .wrapper {
             padding: 0 .5rem;
@@ -46,8 +44,6 @@
 }
 
 @include respond-to(medium-screens) {
-    %large-font {font-size: 1.2rem;}
-    %xlarge-font {font-size: 2rem;}
     .participation {
         .wrapper {
             padding: 0 .5rem;
