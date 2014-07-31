@@ -51,17 +51,17 @@ app.view('header', ['$el'], function ($el) {
         }, 900, 'swing');
     }
 
-    function start () {
-        $el.find('.lightbox').addClass('active');
-    }
+//     function start () {
+//         $el.find('.lightbox').addClass('active');
+//     }
 
     function hideLightbox() {
         $el.find('.lightbox').removeClass('active');
     }
 
-    //Load Functions
-    setTimeout(function() {
-        start();
-    }, 1000);
+//    Load Functions
+//     setTimeout(function() {
+//         start();
+//     }, 1000);
 
 });
