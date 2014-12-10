@@ -81,14 +81,14 @@
         }
     }
     .single-question {
-        @include table-flex();
+//        @include table-flex();
     }
     .question {
-        @include table-flex-child(1, 0);
+//        @include table-flex-child(1, 0);
         padding: 1rem;
     }
     .answer {
-        @include table-flex-child(2, 0);
+//        @include table-flex-child(2, 0);
     }
 
 }

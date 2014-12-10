@@ -140,12 +140,12 @@
             width: 960px;
         }
         .project-container {
-            @include table-flex();
+//            @include table-flex();
         }
         .captures,
         .project-data,
         .project-single {
-            @include table-flex-child(1, 0);
+//            @include table-flex-child(1, 0);
         }
         .project-single {
             margin-right: 1rem;
