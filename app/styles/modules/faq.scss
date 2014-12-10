@@ -81,14 +81,17 @@
         }
     }
     .single-question {
-//        @include table-flex();
+        @include display(flex);
+        @include align-items(stretch);
+        @include flex-direction(row);
+        @include justify-content(flex-start);
     }
     .question {
-//        @include table-flex-child(1, 0);
+        @include flex(1);
         padding: 1rem;
     }
     .answer {
-//        @include table-flex-child(2, 0);
+        @include flex(2);
     }
 
 }

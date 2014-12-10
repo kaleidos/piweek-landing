@@ -6,6 +6,7 @@
     .wrapper {
         @include table-flex-child(0, auto, 0, 960px);
         text-align: center;
+        margin: 0 auto;
     }
     .icon-logo {
         color: $purple;
