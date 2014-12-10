@@ -67,7 +67,7 @@ gulp.task("scss-lint", function() {
     gulp.src([paths.appStyles, "!/**/bourbon/**/*.scss", "!/**/normalize.css/**/normalize.css"])
         .pipe(plumber())
         .pipe(cache("scsslint"))
-        .pipe(scsslint({config: "scss-lint.yml"}));
+        .pipe(scsslint({config: "scss-lint.yml", 'bundleExec': true}));
 });
 
 // Sass Files
