@@ -3,10 +3,10 @@
     background: url('../images/piweek.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
+    @include display(flex);
     .wrapper {
-        @include table-flex-child(0, auto, 0, 960px);
+        @include flex(1);
         text-align: center;
-        margin: 0 auto;
     }
     .icon-logo {
         color: $purple;
