@@ -190,16 +190,11 @@ gulp.task("default", [
     "watch"
 ]);
 
-// The default task (called when you run `gulp` from cli)
-gulp.task("dist", [
+// Execute ```gulp deploy``` for ```deploy``` on production
+gulp.task("deploy", [
     "jade",
     "sass",
-    "cssLint",
-    "minifyCSS",
     "jsLibs",
     "scripts",
-    "imagemin",
     "copy",
-    "connect",
-    "watch"
 ]);
