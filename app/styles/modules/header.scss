@@ -40,6 +40,9 @@
         color: $orange;
         font-family: OpenSans-Bold;
         line-height: 2.5rem;
+        span {
+            display: block;
+        }
     }
     .participate {
         color: $white;
