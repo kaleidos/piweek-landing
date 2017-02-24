@@ -1,0 +1,53 @@
+/*	HERO SECTION
+------------------------*/
+
+.hero {
+  background-image: url('../images/home.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $white;
+  min-height: 70vh;
+  padding: 70px 0;
+  .row-inside {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+      color: $pink;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1em;
+      max-width: 800px;
+      @include bp(tablet) {
+        font-size: 3rem;
+      }
+    }
+    span {
+      font-size: 1.8rem;
+      font-style: italic;
+      margin-bottom: .5em;
+    }
+    h4 {
+      font-size: 1rem;
+      max-width: 800px;
+      @include bp(tablet) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.btn-purple {
+  background-color: $pink-trans;
+  border-radius: 5px;
+  border: 1px solid $pink;
+  color: $white;
+  font-weight: 600;
+  margin-top: 2em;
+  padding: 1em;
+  transition: all .3s ease;
+  &:hover {
+    background-color: $pink;
+  }
+}

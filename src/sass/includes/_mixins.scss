@@ -1,0 +1,20 @@
+/*	MIXINS
+------------------------*/
+
+@mixin bp($point) {
+  $mobile: "(min-width: 480px)";
+  $tablet: "(min-width: 767px)";
+  $desktop: "(min-width: 1200px)";
+  $large-desktop: "(min-width: 1680px)";
+  @if $point == large-desktop {
+    @media #{$large-desktop} { @content; }
+  }  @else if $point == desktop {
+    @media #{$desktop} { @content; }
+  }  @else if $point == tablet {
+    @media #{$tablet} { @content; }
+  }  @else if $point == mobile {
+    @media #{$mobile}  { @content; }
+  } @else {
+    @media #{$point} { @content; }
+  }
+}

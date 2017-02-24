@@ -1,21 +1,19 @@
 PIWEEK landing page
 ============
 
-Kaleidos 2014 summer PIWEEK landing page
+Kaleidos 2017 summer PIWEEK landing page
 
 
 ## Setup
 
 1. Clone the project and cd into its folder
-2. Run `bower install`
-3. Run `npm install`
-3. Run `bundle install --path vendor`
+2. Run `npm install`
 
 ## Build
 
 Run
 
-    gulp
+    gulp build
 
-in the project folder, and open <http://localhost:8080> in a browser.
+in the project folder, and open <http://localhost:3000> in a browser.
 

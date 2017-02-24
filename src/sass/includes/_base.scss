@@ -1,0 +1,77 @@
+/*	FONTS
+------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i);
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $pink;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+body {
+  background-color: $white;
+  color: #555;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+}
+
+/* ------ Row system -------*/
+
+.row-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .row-inside {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+.two-col {
+  display: flex;
+  flex-direction: column;
+  @include bp(tablet) {
+    flex-direction: row;
+  }
+  .col {
+    flex: 1;
+    @include bp(tablet) {
+      margin-right: 1.5em;
+    }
+    &:last-child {
+      @include bp(tablet) {
+        margin-left: 1.5em;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* -------- Common styles -------*/
+
+.section-title {
+  background: -webkit-linear-gradient(180deg,$pink, $g-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $g-blue;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+}

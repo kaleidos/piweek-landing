@@ -1,0 +1,15 @@
+/*	pictures SECTION
+------------------------*/
+
+.row-pictures {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  img {
+    width: 50%;
+    @include bp(tablet) {
+      width: 25%;
+    }
+  }
+}

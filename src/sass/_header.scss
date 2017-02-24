@@ -1,0 +1,75 @@
+/*	MAIN HEADER
+------------------------*/
+
+.main-header {
+  display: flex;
+  left: 0;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all .4s ease;
+  z-index: 10;
+  .row-inside {
+    flex-direction: row;
+  }
+  &.header-white {
+    background-color: $white;
+    .main-logo {
+      svg {
+        .main-logo-text {
+          fill: $black;
+        }
+      }
+    }
+    .main-nav {
+      li {
+        a{
+          color: $gray-medium;
+          &.join-us {
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-logo {
+  }
+  svg {
+    width: 100px;
+    .main-logo-icon {
+      fill: $pink;
+    }
+    .main-logo-text {
+      fill: $white;
+    }
+  }
+  @include bp(mobile) {
+    svg {
+      width: 130px;
+    }
+}
+
+.main-nav {
+  align-items: center;
+  display: none;
+  margin-left: auto;
+  @include bp(mobile) {
+    display: flex;
+  }
+  li {
+    margin: .8em;
+    a {
+      color: $white;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.join-us {
+        color: $pink;
+        font-weight: bold;
+      }
+    }
+  }
+}

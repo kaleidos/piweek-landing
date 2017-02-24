@@ -1,200 +1,108 @@
+/*global require*/
+"use strict";
+
 var gulp = require('gulp'),
-    newer = require('gulp-newer'),
-    jade = require('gulp-jade'),
+  path = require('path'),
+  data = require('gulp-data'),
+  pug = require('gulp-pug'),
+  prefix = require('gulp-autoprefixer'),
+  sass = require('gulp-sass'),
+  browserSync = require('browser-sync');
 
-    scsslint = require('gulp-scss-lint'),
-    sass = require('gulp-ruby-sass'),
-    csslint = require('gulp-csslint'),
-    minifyCSS = require('gulp-minify-css'),
-    styledocco = require('gulp-styledocco'),
-
-    concat = require('gulp-concat'),
-
-    imagemin = require('gulp-imagemin'),
-    pngcrush = require('imagemin-pngcrush'),
-
-    watch = require('gulp-watch'),
-    size = require('gulp-filesize'),
-    notify = require("gulp-notify"),
-    plumber = require('gulp-plumber'),
-    rimraf = require('gulp-rimraf'),
-    cache = require("gulp-cached"),
-    connect = require('gulp-connect'),
-    merge = require('merge-stream');
-
-/**************************************
-    REQUIRED PATHS
-**************************************/
-
+/*
+ * Directories here
+ */
 var paths = {
-    app: 'app',
-    dist: 'dist',
-    jade: 'app/**/*.jade',
-    jadeViews: 'app/views/**/*.jade',
-    appStyles: 'app/styles/**/*.scss',
-    distStyles: 'dist/styles',
-    sassMain: 'app/styles/main.scss',
-    css:  'dist/styles/**/*.css',
-    images: 'app/images/**/*',
-    appScripts: 'app/scripts/**/*.js',
-    distScripts: 'dist/scripts',
-    jsLibs: [
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/injectorJS/src/injector.js'],
-    scripts: [
-        'app/scripts/main.js',
-        'app/scripts/modules/*.js',
-        'app/scripts/init.js']
+  public: './public/',
+  sass: './src/sass/',
+  css: './public/css/',
+  images: './public/images/',
+  jsfiles: './public/js/',
+  data: './src/_data/'
 };
 
-/**************************************
-    HTML TASKS
-**************************************/
-
-gulp.task("jade", function() {
-  return gulp.src(paths.jade)
-             .pipe(plumber())
-             .pipe(jade({pretty: true}))
-             .pipe(gulp.dest(paths.dist));
+/**
+ * Compile .pug files and pass in data from json file
+ * matching file name. index.pug - index.pug.json
+ */
+gulp.task('pug', function () {
+  return gulp.src('./src/*.pug')
+    .pipe(data(function (file) {
+      return require(paths.data + path.basename(file.path) + '.json');
+    }))
+    .pipe(pug())
+    .on('error', (err) => {
+      console.log(err.message);
+    })
+    .pipe(gulp.dest(paths.public));
 });
 
-/**************************************
-    CSS TASKS
-**************************************/
-
-// Sass lint
-gulp.task("scss-lint", function() {
-    gulp.src([paths.appStyles, "!/**/bourbon/**/*.scss", "!/**/normalize.css/**/normalize.css"])
-        .pipe(plumber())
-        .pipe(cache("scsslint"))
-        .pipe(scsslint({config: "scss-lint.yml", 'bundleExec': true}));
+/**
+ * Recompile .pug files and live reload the browser
+ */
+gulp.task('rebuild', ['pug'], function () {
+  browserSync.reload();
 });
 
-// Sass Files
-gulp.task("sass", function () {
-    return gulp.src(paths.sassMain)
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(gulp.dest(paths.distStyles));
+/**
+ * Wait for pug and sass tasks, then launch the browser-sync Server
+ */
+gulp.task('browser-sync', ['sass', 'pug'], function () {
+  browserSync({
+    server: {
+      baseDir: paths.public
+    },
+    notify: false
+  });
 });
 
-// CSS Linting and report
-gulp.task("cssLint", function() {
-    gulp.src([paths.css, '!dist/styles/normalize.css'])
-        .pipe(csslint("csslintrc.json"))
-        .pipe(csslint.reporter());
+/**
+ * Compile .scss files into public css directory With autoprefixer no
+ * need for vendor prefixes then live reload the browser.
+ */
+gulp.task('sass', function () {
+  return gulp.src(paths.sass + '*.scss')
+    .pipe(sass({
+      includePaths: [paths.sass],
+      outputStyle: 'compressed'
+    }))
+    .on('error', sass.logError)
+    .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
+      cascade: true
+    }))
+    .pipe(gulp.dest(paths.css))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
-// Minify CSS
-gulp.task("minifyCSS", ["cssLint"], function () {
-    gulp.src("dist/styles/main.css")
-        .pipe(minifyCSS())
-        .pipe(gulp.dest(paths.distStyles))
-        .pipe(size());
+/** Copy images to public **/
+gulp.task('copyimages', function() {
+   gulp.src('./src/images/**/*.{jpg,gif,png,svg}')
+   .pipe(gulp.dest(paths.images));
 });
 
-/************************************
-JS TASKS
-**************************************/
-
-gulp.task("jsLibs", function () {
-    return gulp.src(paths.jsLibs)
-    .pipe(plumber())
-    .pipe(concat('libs.js'))
-    .pipe(gulp.dest(paths.distScripts));
+/** Copy js to public **/
+gulp.task('copyjs', function() {
+   gulp.src('./src/js/**/*')
+   .pipe(gulp.dest(paths.jsfiles));
 });
 
-gulp.task("scripts", function () {
-    return gulp.src(paths.scripts)
-    .pipe(plumber())
-    .pipe(concat('script.js'))
-    .pipe(gulp.dest(paths.distScripts));
+/**
+ * Watch scss files for changes & recompile
+ * Watch .pug files run pug-rebuild then reload BrowserSync
+ */
+gulp.task('watch', function () {
+  gulp.watch(paths.sass + '**/*.scss', ['sass']);
+  gulp.watch('./src/**/*.pug', ['rebuild']);
 });
 
+// Build task compile sass and pug.
+gulp.task('build', ['sass', 'pug', 'copyimages', 'copyjs']);
 
-/**************************************
-    IMAGE TASKS
-**************************************/
-
-gulp.task("imagemin", function () {
-    return gulp.src(paths.images)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngcrush()]
-        }))
-        .pipe(plumber())
-        .pipe(gulp.dest(paths.dist+"/images"));
-});
-
-/**************************************
-    COPY TASKS
-**************************************/
-
-// Copy Files
-gulp.task("copy", function() {
-    // Copy fonts
-    t1 = gulp.src(paths.app+"/fonts/*")
-        .pipe(gulp.dest(paths.dist+"/fonts/"));
-
-    t2 = gulp.src(paths.app+"/images/*")
-        .pipe(gulp.dest(paths.dist+"/images/"));
-
-    t3 = gulp.src(paths.app+"/video/*")
-        .pipe(gulp.dest(paths.dist+"/video/"));
-
-    t4 = gulp.src("bower_components/normalize.css/normalize.css")
-        .pipe(gulp.dest(paths.dist+"/styles/"));
-    return merge(t1, t2, t3, t4);
-});
-
-gulp.task("clean", function() {
-    // Copy fonts
-    gulp.src(paths.dist, { read: false })
-        .pipe(rimraf({force: true}));
-});
-
-gulp.task("cleanAll", function() {
-    // Copy fonts
-    gulp.src([paths.dist, "bower_components", "node_modules"], { read: false })
-        .pipe(rimraf({force: true}));
-});
-
-/**************************************
-    SERVER TASKS
-**************************************/
-
-gulp.task('connect', function() {
-    connect.server({
-        root: paths.dist,
-        livereload: true
-    });
-});
-
-// Rerun the task when a file changes
-gulp.task("watch", function() {
-    gulp.watch(paths.jade, ["jade"]);
-    gulp.watch(paths.appStyles, ["scss-lint", "sass", "cssLint"]);
-    gulp.watch(paths.appScripts, ["scripts"]);
-});
-
-// The default task (called when you run `gulp` from cli)
-gulp.task("default", [
-    "jade",
-    "sass",
-    "cssLint",
-    "jsLibs",
-    "scripts",
-    "copy",
-    "connect",
-    "watch"
-]);
-
-// Execute ```gulp deploy``` for ```deploy``` on production
-gulp.task("deploy", [
-    "jade",
-    "sass",
-    "jsLibs",
-    "scripts",
-    "copy",
-]);
+/**
+ * Default task, running just `gulp` will compile the sass,
+ * compile the jekyll site, launch BrowserSync then watch
+ * files for changes
+ */
+gulp.task('default', ['browser-sync', 'watch']);

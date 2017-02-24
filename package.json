@@ -1,35 +1,25 @@
 {
-  "name": "Piweek",
-  "version": "0.0.1",
-  "description": "PiweekPage",
-  "main": "index.html",
-  "keywords": [
-    "Kaleidos",
-    "piweek"
-  ],
-  "author": "Kaleidos",
-  "license": "ISC",
+  "name": "piweek-web-2017",
+  "version": "1.0.0",
+  "description": "Piweek landing page",
+  "main": "gulpfile.js",
+  "author": "Kaleidos <hello@kaleidos.net> (http://kaleidos.net)",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-cached": "^1.1.0",
-    "gulp-changed": "^0.4.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-connect": "^2.3.1",
-    "gulp-csslint": "^0.1.5",
-    "gulp-filesize": "0.0.6",
-    "gulp-imagemin": "^0.6.2",
-    "gulp-jade": "^0.7.0",
-    "gulp-minify-css": "^0.3.13",
-    "gulp-newer": "^0.3.0",
-    "gulp-notify": "^1.8.0",
-    "gulp-plumber": "^0.6.6",
-    "gulp-rimraf": "^0.1.1",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-scss-lint": "^0.1.12",
-    "gulp-styledocco": "0.0.3",
-    "gulp-watch": "^0.6.10",
-    "imagemin": "^0.4.9",
-    "imagemin-pngcrush": "^0.1.0",
-    "merge-stream": "^0.1.8"
-  }
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-data": "^1.2.0",
+    "gulp-pug": "^3.0.3",
+    "gulp-sass": "^2.0.4"
+  },
+  "keywords": [
+    "Piweek",
+    "Kaleidos",
+    "landing"
+  ]
 }
