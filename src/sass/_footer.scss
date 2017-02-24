@@ -1,0 +1,42 @@
+/*	FOOTER SECTION
+------------------------*/
+
+.main-footer {
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,.3);
+  display: flex;
+  margin-top: 2em;
+  padding-top: 2em;
+  width: 100%;
+  a {
+    opacity: .5;
+    transition: all .4s ease;
+    svg {
+      fill: $white;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.social {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  a {
+    svg {
+      height: 30px;
+      margin-left: 1em;
+      width: 30px;
+    }
+  }
+}
+
+.kaleidos-logo {
+  a {
+    svg {
+      height: 40px;
+    }
+  }
+}

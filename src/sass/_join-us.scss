@@ -29,25 +29,12 @@
     }
     a {
       color: $white;
+      cursor: pointer;
       font-size: 1.2rem;
       max-width: 800px;
       &:hover {
         text-decoration: underline;
       }
     }
-  }
-}
-
-.btn-purple {
-  background-color: $pink-trans;
-  border-radius: 5px;
-  border: 1px solid $pink;
-  color: $white;
-  font-weight: 600;
-  margin-top: 2em;
-  padding: 1em;
-  transition: all .3s ease;
-  &:hover {
-    background-color: $pink;
   }
 }
