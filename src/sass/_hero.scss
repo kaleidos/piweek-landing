@@ -9,10 +9,12 @@
   color: $white;
   min-height: 70vh;
   padding: 70px 0;
+  position: relative;
   .row-inside {
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 1;
     h1 {
       color: $pink;
       font-size: 2rem;
@@ -49,5 +51,47 @@
   transition: all .3s ease;
   &:hover {
     background-color: $pink;
+  }
+}
+
+.line1, .line2 {
+  position: absolute;
+  display: none;
+  @include bp(mobile) {
+    display: block;
+  }
+}
+
+.line1 {
+  animation: line1 2s ease-out;
+  left: 5vw;
+  top: 100px;
+}
+
+.line2 {
+  animation: line2 2.5s ease-out;
+  right: 10vw;
+  top: 260px;
+}
+
+@keyframes line1 {
+  0% {
+    opacity: 0;
+    top: 200px
+  }
+  100% {
+    opacity: 1;
+    top: 100px;
+  }
+}
+
+@keyframes line2 {
+  0% {
+    opacity: 0;
+    top: 200px
+  }
+  100% {
+    opacity: 1;
+    top: 260px;
   }
 }
