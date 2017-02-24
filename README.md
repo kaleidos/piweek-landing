@@ -15,5 +15,9 @@ Run
 
     gulp build
 
+Watch
+
+    gulp
+
 in the project folder, and open <http://localhost:3000> in a browser.
 
