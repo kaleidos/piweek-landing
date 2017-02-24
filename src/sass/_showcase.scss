@@ -75,7 +75,12 @@ a.control_prev, a.control_next {
   width: auto;
   z-index: 9;
   svg {
-    width: 40px;
+    width: 30px;
+  }
+  @include bp(mobile) {
+    svg {
+      width: 40px;
+    }
   }
 }
 
