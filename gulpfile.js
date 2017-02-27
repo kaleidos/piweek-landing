@@ -13,11 +13,11 @@ var gulp = require('gulp'),
  * Directories here
  */
 var paths = {
-  public: './public/',
+  dist: './dist/',
   sass: './src/sass/',
-  css: './public/css/',
-  images: './public/images/',
-  jsfiles: './public/js/',
+  css: './dist/css/',
+  images: './dist/images/',
+  jsfiles: './dist/js/',
   data: './src/_data/'
 };
 
@@ -34,7 +34,7 @@ gulp.task('pug', function () {
     .on('error', (err) => {
       console.log(err.message);
     })
-    .pipe(gulp.dest(paths.public));
+    .pipe(gulp.dest(paths.dist));
 });
 
 /**
@@ -50,14 +50,14 @@ gulp.task('rebuild', ['pug'], function () {
 gulp.task('browser-sync', ['sass', 'pug'], function () {
   browserSync({
     server: {
-      baseDir: paths.public
+      baseDir: paths.dist
     },
     notify: false
   });
 });
 
 /**
- * Compile .scss files into public css directory With autoprefixer no
+ * Compile .scss files into dist css directory With autoprefixer no
  * need for vendor prefixes then live reload the browser.
  */
 gulp.task('sass', function () {
@@ -76,13 +76,13 @@ gulp.task('sass', function () {
     }));
 });
 
-/** Copy images to public **/
+/** Copy images to dist **/
 gulp.task('copyimages', function() {
    gulp.src('./src/images/**/*.{jpg,gif,png,svg}')
    .pipe(gulp.dest(paths.images));
 });
 
-/** Copy js to public **/
+/** Copy js to dist **/
 gulp.task('copyjs', function() {
    gulp.src('./src/js/**/*')
    .pipe(gulp.dest(paths.jsfiles));
