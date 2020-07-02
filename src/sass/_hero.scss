@@ -36,6 +36,13 @@
       @include bp(tablet) {
         font-size: 1.2rem;
       }
+      a {
+        color: $pink;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
