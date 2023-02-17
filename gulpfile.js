@@ -18,18 +18,13 @@ var paths = {
   css: './dist/css/',
   images: './dist/images/',
   jsfiles: './dist/js/',
-  data: './src/_data/'
 };
 
 /**
- * Compile .pug files and pass in data from json file
- * matching file name. index.pug - index.pug.json
+ * Compile .pug files
  */
 gulp.task('pug', function () {
   return gulp.src('./src/*.pug')
-    .pipe(data(function (file) {
-      return require(paths.data + path.basename(file.path) + '.json');
-    }))
     .pipe(pug())
     .on('error', (err) => {
       console.log(err.message);
